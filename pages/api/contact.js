@@ -37,6 +37,9 @@ export const submitMessage = async (req, res) => {
 
   let client;
   try {
+    // const connectionString = `mongodb+srv://${process.env.mongodb_username}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.xnwca09.mongodb.net/${process.env.mongodb_database}?retryWrites=true&w=majority`
+    // client = await MongoClient.connect(connectionString)
+    //! Using .env variables
     client = await MongoClient.connect(`mongodb+srv://${userMongoDb}:${passwordMongoDb}@${clusterMongoDb}.xnwca09.mongodb.net/${dbMongoDb}?retryWrites=true&w=majority`)
     
   } catch (error) {
